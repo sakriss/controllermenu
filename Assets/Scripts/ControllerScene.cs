@@ -34,4 +34,14 @@ public class ControllerScene : MonoBehaviour {
 			}
 		}
 	}
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Button Handler Trigger Enter");
+
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        Debug.Log("Button Handler Collision Enter");
+
+    }
 }

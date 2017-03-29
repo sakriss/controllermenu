@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class ButtonHandler: MonoBehaviour {
 
 	public bool scene1;
 	public bool scene2;
 	public bool scene3;
 
-	void OnTriggerEnter (Collider other) {
+	public void OnCollisionEnter(Collision col) {
+		Debug.Log("CollisionEnter");
+	}
+
+	public void OnTriggerEnter (Collider other) {
+        Debug.Log("Button Handler Trigger Enter");
 		if(other.tag == "VrController")
  		{
      if(scene1 == true)
