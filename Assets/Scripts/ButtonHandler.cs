@@ -15,11 +15,11 @@ public class ButtonHandler: MonoBehaviour {
  		{
      if(scene1 == true)
      {
-         SceneManager.LoadScene("Scene1"); //This will load the scene that is named "Floor One" change the scene name in the script
+         SceneManager.LoadScene("Scene1"); //This will load the scene that is named "Scene1"
      }
      else if(scene2 == true)
      {
-         SceneManager.LoadScene("Scene2"); // loads a scene called "Floor Two"
+         SceneManager.LoadScene("Scene2"); // loads a scene called "Scene2"
      }
      else if(scene3 == true)
      {
@@ -31,4 +31,5 @@ public class ButtonHandler: MonoBehaviour {
      }
   }
  }
+
 }
