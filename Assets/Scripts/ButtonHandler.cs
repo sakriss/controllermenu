@@ -9,10 +9,6 @@ public class ButtonHandler: MonoBehaviour {
 	public bool scene2;
 	public bool scene3;
 
-	public void OnCollisionEnter(Collision col) {
-		Debug.Log("CollisionEnter");
-	}
-
 	public void OnTriggerEnter (Collider other) {
         Debug.Log("Button Handler Trigger Enter");
 		if(other.tag == "VrController")
