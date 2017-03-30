@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RightControllerManager : MonoBehaviour {
-    SteamVR_TrackedController controller;
-    // Use this for initialization
+    SteamVR_TrackedController controller; 
+
     void Start () {
         controller = GetComponent<SteamVR_TrackedController>();
         if (controller == null)
