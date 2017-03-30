@@ -18,11 +18,7 @@ public class RightControllerManager : MonoBehaviour {
     public void DrawLaser()
     {
          DrawLine(transform.position, transform.forward * 100, Color.green);	
-    }
-    void Update () 
-{ 
-    //DrawLine(transform.position, transform.forward * 100, Color.green);	
- }
+    } 
 
     //This will cause the button to be triggered when the laser pointer hits it
     void Fire(object sender, ClickedEventArgs e)
@@ -35,9 +31,7 @@ public class RightControllerManager : MonoBehaviour {
         {
             GameObject button = _hit.collider.gameObject;
 	        Debug.Log("Laser hit");
-	        Debug.Log(button);
-             //if (other.tag == "LeftController-Menu")
-             //{
+	        Debug.Log(button); 
                 ButtonHandler buttonHandler = _hit.collider.gameObject.GetComponent<ButtonHandler>();
                  
                 if (buttonHandler.scene1)
@@ -52,14 +46,10 @@ public class RightControllerManager : MonoBehaviour {
                 { 
                     SceneManager.LoadScene("Scene3");
                 }
-                 
-            //}
-
         }
 
     }
-
-
+     
     void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.01f)
     {
         GameObject myLine = new GameObject();

@@ -23,8 +23,7 @@ public class ControllerScene : MonoBehaviour
         ButtonEnabled = false;
 
     }
-
-    // Update is called once per frame
+ 
     void Update()
     {
         var device = SteamVR_Controller.Input((int)obj.index);
@@ -46,13 +45,7 @@ public class ControllerScene : MonoBehaviour
             rightControllerManager.DrawLaser();
         }
     }
-
-    //Hopfully this sets up the controller to fire a laser pointer
-    void Start()
-    {
-
-    }
-
+  
     void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.01f)
     {
         GameObject myLine = new GameObject();
