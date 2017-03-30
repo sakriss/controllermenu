@@ -14,10 +14,14 @@ public class RightControllerManager : MonoBehaviour {
         }
         controller.TriggerClicked += new ClickedEventHandler(Fire);
     }
- 
-void Update () 
+
+    public void DrawLaser()
+    {
+         DrawLine(transform.position, transform.forward * 100, Color.green);	
+    }
+    void Update () 
 { 
-    DrawLine(transform.position, transform.forward * 100, Color.green);	
+    //DrawLine(transform.position, transform.forward * 100, Color.green);	
  }
 
     //This will cause the button to be triggered when the laser pointer hits it
@@ -56,18 +60,18 @@ void Update ()
     }
 
 
-void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.01f)
-         {
-             GameObject myLine = new GameObject();
-             myLine.transform.position = start;
-             myLine.AddComponent<LineRenderer>();
-             LineRenderer lr = myLine.GetComponent<LineRenderer>();
-             lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-             lr.SetColors(color, color);
-             lr.SetWidth(0.01f, 0.01f);
-             lr.SetPosition(0, start);
-             lr.SetPosition(1, end);
-             GameObject.Destroy(myLine, duration);
-         }
+    void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.01f)
+    {
+        GameObject myLine = new GameObject();
+        myLine.transform.position = start;
+        myLine.AddComponent<LineRenderer>();
+        LineRenderer lr = myLine.GetComponent<LineRenderer>();
+        lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
+        lr.SetColors(color, color);
+        lr.SetWidth(0.01f, 0.01f);
+        lr.SetPosition(0, start);
+        lr.SetPosition(1, end);
+        GameObject.Destroy(myLine, duration);
+    }
 
 }
