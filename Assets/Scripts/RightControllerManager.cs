@@ -14,10 +14,7 @@ public class RightControllerManager : MonoBehaviour {
         }
         controller.TriggerClicked += new ClickedEventHandler(Fire);
     }
-	
-	
-// Update is called once per frame
-	
+ 
 void Update () 
 {
 
@@ -36,10 +33,10 @@ void Update ()
         if (Physics.Raycast(transform.position, transform.forward * 100, out _hit))
         {
             GameObject button = _hit.collider.gameObject;
-	    Debug.Log("Laser hit");
-	    Debug.Log(button);
-            //if (other.tag == "VrController")
-            //{
+	        Debug.Log("Laser hit");
+	        Debug.Log(button);
+             //if (other.tag == "LeftController-Menu")
+             //{
                 ButtonHandler buttonHandler = _hit.collider.gameObject.GetComponent<ButtonHandler>();
                 Debug.Log("Inside button handler");
                 if (buttonHandler.scene1)
@@ -55,7 +52,7 @@ void Update ()
                 {
                     SceneManager.LoadScene("Scene3");
                 }
-            //}
+             //}
 
         }
 
