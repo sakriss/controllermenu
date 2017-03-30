@@ -16,16 +16,13 @@ public class RightControllerManager : MonoBehaviour {
     }
  
 void Update () 
-{
+{ 
+    DrawLine(transform.position, transform.forward * 100, Color.green);	
+ }
 
-	DrawLine(transform.position, transform.forward * 100, Color.green);	
-	
-}
-
-    //Hopefully this will cause the button to be triggered when the laser pointer hits it
+    //This will cause the button to be triggered when the laser pointer hits it
     void Fire(object sender, ClickedEventArgs e)
-    {
-        //DrawLine(transform.position, transform.forward * 100, Color.red);
+    { 
         Debug.Log("Laser Fired");
         int layerMask = 1 << 8;
         RaycastHit _hit;
@@ -38,21 +35,21 @@ void Update ()
              //if (other.tag == "LeftController-Menu")
              //{
                 ButtonHandler buttonHandler = _hit.collider.gameObject.GetComponent<ButtonHandler>();
-                Debug.Log("Inside button handler");
+                 
                 if (buttonHandler.scene1)
-                {
-                    Debug.Log("Should load scene 1 now");
+                { 
                     SceneManager.LoadScene("Scene1");
                 }
                 else if (buttonHandler.scene2)
-                {
+                { 
                     SceneManager.LoadScene("Scene2");
                 }
                 else if (buttonHandler.scene3)
-                {
+                { 
                     SceneManager.LoadScene("Scene3");
                 }
-             //}
+                 
+            //}
 
         }
 
